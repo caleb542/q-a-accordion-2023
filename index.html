@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fira+Mono&family=JetBrains+Mono:wght@100;300;400&family=Lato:wght@400;700&family=Montserrat:wght@300;400;600;800;900&family=Open+Sans:wght@300;400;500;700&family=Poppins:ital,wght@0,300;0,400;1,500&family=Red+Hat+Mono:wght@300;400;500&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" media="screen">
+    <title>Questions and Answers</title>
+</head>
+
+<body>
+    <main>
+        <section class="destination160-faqs">
+            <h1>FAQs</h1>
+
+            <article>
+                <div class="details">
+                    <a class="summary" href="#">
+                        <h2>Ways of Working</h2>
+                    </a>
+                    <div class="answers">
+                        <div>
+                            <strong>Ad deserunt laborum occaecat fugiat eiusmod commodo?</strong>
+                            <p>
+                                Magna sit do incididunt quis aliquip nulla excepteur eu eiusmod nostrud. Eu
+                                consequat quis nulla anim pariatur deserunt dolore exercitation anim qui proident
+                                fugiat sunt.
+                            </p>
+                        </div>
+                        <div>
+                            <strong>Enim veniam sunt nisi cupidatat est ullamco excepteur quis proident et
+                                adipisicing sint id consequat?</strong>
+                            <p>
+                                Anim ullamco culpa ex dolor voluptate.
+                            </p>
+                        </div>
+                    </div>
+                   
+
+                </div>
+            </article>
+            <article>
+                <div class="details">
+                    <a class="summary" href="#"> 
+                        <h2>Technology</h2>
+                    </a>
+                    <div class="answers">
+                        <div>
+                            <strong>Ad deserunt laborum occaecat fugiat eiusmod commodo?</strong>
+                            <p>
+                                Magna sit do incididunt quis aliquip nulla excepteur eu eiusmod nostrud. Eu
+                                consequat quis nulla anim pariatur deserunt dolore exercitation anim qui
+                                proident fugiat sunt.
+                            </p>
+                        </div>
+                        <div>
+                            <strong>Enim veniam sunt nisi cupidatat est ullamco excepteur quis proident et
+                                adipisicing sint id consequat?</strong>
+                            <p>
+                                Anim ullamco culpa ex dolor voluptate.
+                            </p>
+                        </div>
+                        <div>
+                            <strong>Enim veniam sunt nisi cupidatat est ullamco excepteur quis proident et
+                                adipisicing sint id consequat?</strong>
+                            <p>
+                                Anim ullamco culpa ex dolor voluptate.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </article>
+            <article>
+                <div class="details">
+                  
+                        <a  class="summary" href="#" role="button" aria-pressed="false">
+                            <h2>Wellbeing</h2>
+                        </a>
+                        
+                  
+                    <div class="answers">
+                        <div>
+                            <strong>Ad deserunt laborum occaecat fugiat eiusmod commodo?</strong>
+                            <p>
+                                Magna sit do incididunt quis aliquip nulla excepteur eu eiusmod
+                                nostrud. Eu consequat quis nulla anim pariatur deserunt dolore
+                                exercitation anim qui proident fugiat sunt.
+                            </p>
+                        </div>
+                        <div>
+                            <strong>Enim veniam sunt nisi cupidatat est ullamco excepteur quis
+                                proident et adipisicing sint id consequat?</strong>
+                            <p>
+                                Anim ullamco culpa ex dolor voluptate.
+                            </p>
+                        </div>
+                        <div>
+                            <strong>Ad deserunt laborum occaecat fugiat eiusmod commodo?</strong>
+                            <p>
+                                Magna sit do incididunt quis aliquip nulla excepteur eu eiusmod
+                                nostrud. Eu consequat quis nulla anim pariatur deserunt dolore
+                                exercitation anim qui proident fugiat sunt.
+                            </p>
+                        </div>
+                        <div>
+                            <strong>Enim veniam sunt nisi cupidatat est ullamco excepteur quis
+                                proident et adipisicing sint id consequat?</strong>
+                            <p>
+                                Anim ullamco culpa ex dolor voluptate.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </article>
+            <article>
+                <div class="details">
+                        <a  class="summary" href="#">
+                            <h2>Amenities</h2>
+                        </a>
+                   
+                    <div class="answers">
+                        <div >
+                            <strong>Ad deserunt laborum occaecat fugiat eiusmod
+                                commodo?</strong>
+                            <p>
+                                Magna sit do incididunt quis aliquip nulla excepteur eu
+                                eiusmod nostrud. Eu consequat quis nulla anim pariatur
+                                deserunt dolore exercitation anim qui proident fugiat
+                                sunt.
+                            </p>
+                        </div>
+                    
+                    </div>
+                    
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        
+        function init(){
+            const answers = document.querySelectorAll('.answers');
+            answers.forEach( (elem, i) => {
+                const h = elem.clientHeight;
+                elem.setAttribute('height',h);
+                elem.style.height = 0;
+                    elem.setAttribute('open', false) 
+            })
+        }
+        const details = document.querySelectorAll('.details .summary');
+            details.forEach( (deet, i) => {
+                deet.addEventListener('click', function(e){
+                     e.preventDefault();
+                    let elem = deet.nextSibling.nextSibling;    
+                    let height = elem.getAttribute('height')
+                    
+                    if(elem.style.height === '0px'){
+                        elem.classList.add('open');
+                        elem.style.height = `${height}px`;
+                        deet.parentNode.classList.add('open');
+                        deet.parentNode.setAttribute('aria-pressed','true');
+                    }else{
+                        elem.classList.remove('open');
+                        elem.style.height = `0px`;
+                        deet.parentNode.classList.remove('open');
+                        deet.parentNode.setAttribute('aria-pressed','false');
+                    }
+                })
+
+            });   
+           
+           
+        
+
+      
+        init()
+    </script>
+</body>
+
+</html>
